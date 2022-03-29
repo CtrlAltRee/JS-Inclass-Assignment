@@ -20,8 +20,6 @@ function changeBoxOne() {
 
 //copy changeBox, rename ChangeBoxTwo, copy eventListener, etc
 
-btn1.addEventListener("click", changeBoxOne);
-
 // to round # down = Math.floor()
 // to round # up = Math.ceil()
 
@@ -30,11 +28,23 @@ function changeBoxTwo() {
     secondbox.style.border = allPixels[Math.floor(Math.random() * allPixels.length)] + " " + allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
 }
 
-btn2.addEventListener("click", changeBoxTwo);
-
 function changeBoxThree() {
     thirdbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
     thirdbox.style.border = "4px "+ allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
 }
 
+function changeAllBoxes() {
+    firstbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
+    firstbox.style.border = "4px "+ allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
+
+    secondbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
+    secondbox.style.border = allPixels[Math.floor(Math.random() * allPixels.length)] + " " + allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
+
+    thirdbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
+    thirdbox.style.border = "4px "+ allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
+}
+
+btn1.addEventListener("click", changeBoxOne);
+btn2.addEventListener("click", changeBoxTwo);
 btn3.addEventListener("click", changeBoxThree);
+btnall.addEventListener("click", changeAllBoxes);
