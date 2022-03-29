@@ -22,8 +22,6 @@ showbtnall = document.getElementById("showbtnall");
 
 resetbtnall = document.getElementById("resetbtnall");
 
-console.log(showbtnall);
-
 function changeBoxOne() {
     firstbox.style.backgroundColor = allColors[Math.floor(Math.random() * allColors.length)];
     firstbox.style.border = "4px "+ allBorders[Math.floor(Math.random() * allColors.length)] + " " + allColors[Math.floor(Math.random() * allColors.length)];
@@ -79,6 +77,17 @@ function showAllBoxes() {
     thirdbox.style.display = "block";
 }
 
+function resetBoxes() {
+    firstbox.style.removeProperty('background-color');
+    firstbox.style.removeProperty('border');
+
+    secondbox.style.removeProperty('background-color');
+    secondbox.style.removeProperty('border');
+
+    thirdbox.style.removeProperty('background-color');
+    thirdbox.style.removeProperty('border');
+}
+
 btn1.addEventListener("click", changeBoxOne);
 btn2.addEventListener("click", changeBoxTwo);
 btn3.addEventListener("click", changeBoxThree);
@@ -91,6 +100,7 @@ hidebtnall.addEventListener("click", hideAllBoxes);
 
 showbtnall.addEventListener("click", showAllBoxes);
 
+resetbtnall.addEventListener("click", resetBoxes);
 
 
 
